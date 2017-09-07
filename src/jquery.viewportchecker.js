@@ -32,11 +32,9 @@
         $.extend(options, useroptions);
 
         // Cache the given element and height of the browser
-        var webkitIndex = navigator.userAgent.indexOf('webkit');
-        
         var $elem = this,
             boxSize = {height: $(options.scrollBox).height(), width: $(options.scrollBox).width()},
-            scrollElem = ((webkitIndex != -1 || navigator.userAgent.toLowerCase().indexOf('windows phone') != -1) ? 'body' : 'html');
+            scrollElem = ((navigator.userAgent.toLowerCase().indexOf('webkit') != -1 || navigator.userAgent.toLowerCase().indexOf('windows phone') != -1) ? 'body' : 'html');
 
         /*
          * Main method that checks the elements and adds or removes the class(es)
